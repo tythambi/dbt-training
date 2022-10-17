@@ -15,6 +15,9 @@ models:
           - not null
       - name: shipmode
         tests:
+          - relationships:
+              to: ref('raw_customer')
+              field: customerid
           - accepted_values: 
               values:
                 - 'First Class'
